@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BurgerApp.AddPage"
+             Title="Добавить в заказ">
+    <VerticalStackLayout WidthRequest="400" HorizontalOptions="Center">
+        <Label Text="Тип мяса:" TextColor="Black" FontSize="20" Margin="10, 15, 0, 0"/>
+        <Border Stroke="#ffc700" StrokeThickness="1" HorizontalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5"/>
+            </Border.StrokeShape>
+            <Picker x:Name="beefPicker" WidthRequest="400" BackgroundColor="#f5f5f5" TextColor="Black" FontSize="20" SelectedIndex="0" SelectedIndexChanged="beefPicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Говядина</x:String>
+                    <x:String>Свинина</x:String>
+                    <x:String>Курица</x:String>
+                </Picker.Items>
+            </Picker>
+        </Border>
+        <Label Text="Дополнительно:" TextColor="Black" FontSize="20" Margin="10, 25, 0, 0"/>
+        <HorizontalStackLayout Margin="0, 15, 0, 0">
+            <Border Stroke="#ffc700" StrokeThickness="1" HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="100"/>
+                </Border.StrokeShape>
+                <Image Source="Salad.png" Margin="0, 15" HeightRequest="50" HorizontalOptions="Center"/>
+            </Border>
+            <VerticalStackLayout Margin="25, 0, 0, 0" WidthRequest="75">
+                <Label Text="Салат" TextColor="Black" FontSize="20" Margin="0, 7, 0, 0"/>
+                <Label Text="10" TextColor="Black" FontSize="20" Margin="0, 10, 0, 0"/>
+            </VerticalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="90,0">
+                <Button Text="-" TextColor="Black" FontSize="30" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="MinusSalad_Clicked"/>
+                <Label Text="0" x:Name="countSalad" TextColor="Black" FontSize="20" Margin="25, 0, 25, 0" VerticalOptions="Center"/>
+                <Button Text="+" TextColor="Black" FontSize="20" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="PlusSalad_Clicked"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="0, 15, 0, 0">
+            <Border Stroke="#ffc700" StrokeThickness="1" HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="100"/>
+                </Border.StrokeShape>
+                <Image Source="Tomato.png" Margin="0, 15" HeightRequest="50" HorizontalOptions="Center"/>
+            </Border>
+            <VerticalStackLayout Margin="25, 0, 0, 0" WidthRequest="75">
+                <Label Text="Томаты" TextColor="Black" FontSize="20" Margin="0, 7, 0, 0"/>
+                <Label Text="5" TextColor="Black" FontSize="20" Margin="0, 10, 0, 0"/>
+            </VerticalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="90,0">
+                <Button Text="-" TextColor="Black" FontSize="30" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="MinusTomato_Clicked"/>
+                <Label Text="0" x:Name="countTomato" TextColor="Black" FontSize="20" Margin="25, 0, 25, 0" VerticalOptions="Center"/>
+                <Button Text="+" TextColor="Black" FontSize="20" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="PlusTomato_Clicked"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="0, 15, 0, 0">
+            <Border Stroke="#ffc700" StrokeThickness="1" HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="100"/>
+                </Border.StrokeShape>
+                <Image Source="Onion.png" Margin="0, 15" HeightRequest="50" HorizontalOptions="Center"/>
+            </Border>
+            <VerticalStackLayout Margin="25, 0, 0, 0" WidthRequest="75">
+                <Label Text="Лук" TextColor="Black" FontSize="20" Margin="0, 7, 0, 0"/>
+                <Label Text="5" TextColor="Black" FontSize="20" Margin="0, 10, 0, 0"/>
+            </VerticalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="90,0">
+                <Button Text="-" TextColor="Black" FontSize="30" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="MinusOnion_Clicked"/>
+                <Label Text="0" x:Name="countOnion" TextColor="Black" FontSize="20" Margin="25, 0, 25, 0" VerticalOptions="Center"/>
+                <Button Text="+" TextColor="Black" FontSize="20" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="PlusOnion_Clicked"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="0, 15, 0, 0">
+            <Border Stroke="#ffc700" StrokeThickness="1" HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="100"/>
+                </Border.StrokeShape>
+                <Image Source="Cucumber.png" Margin="0, 15" HeightRequest="50" HorizontalOptions="Center"/>
+            </Border>
+            <VerticalStackLayout Margin="25, 0, 0, 0" WidthRequest="75">
+                <Label Text="Огурцы" TextColor="Black" FontSize="20" Margin="0, 7, 0, 0"/>
+                <Label Text="15" TextColor="Black" FontSize="20" Margin="0, 10, 0, 0"/>
+            </VerticalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="90,0">
+                <Button Text="-" TextColor="Black" FontSize="30" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="MinusCucumber_Clicked"/>
+                <Label Text="0" x:Name="countCucumber" TextColor="Black" FontSize="20" Margin="25, 0, 25, 0" VerticalOptions="Center"/>
+                <Button Text="+" TextColor="Black" FontSize="20" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="PlusCucumber_Clicked"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="10, 25, 0, 0">
+            <Label Text="Количество:" TextColor="Black" FontSize="20" VerticalOptions="Center" WidthRequest="166"/>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="90,0">
+                <Button Text="-" TextColor="Black" FontSize="30" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="MinusCount_Clicked"/>
+                <Label Text="1" x:Name="countBurger" TextColor="Black" FontSize="20" Margin="25, 0, 25, 0" VerticalOptions="Center"/>
+                <Button Text="+" TextColor="Black" FontSize="20" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="45" CornerRadius="0" Clicked="PlusCount_Clicked"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="10, 10, 0, 25">
+            <Label Text="Итого:" TextColor="Black" FontSize="20" Margin="0, 0, 25, 0"/>
+            <Label Text="1" x:Name="countBurgerPrice" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+            <Label Text="×" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="5, 0, 5, 0"/>
+            <Label Text="300" x:Name="BurgerPrice" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+            <Label Text="=" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="5, 0, 5, 0"/>
+            <Label Text="300" x:Name="totalBurgerPrice" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+        <Button Text="Добавить в заказ" TextColor="Black" FontSize="20" BackgroundColor="#ffc700" HeightRequest="45" WidthRequest="230" Clicked="AddOrder_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
